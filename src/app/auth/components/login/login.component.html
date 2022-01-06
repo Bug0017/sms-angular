@@ -2,10 +2,10 @@
   <div class="left">
     <img src="assets/images/login-cover.svg" alt="login cover">
   </div>
-
+  
   <div class="right">
     <h3>Login</h3>
-    <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm">
+    <form (ngSubmit)="onSubmit(loginForm)" [formGroup]="loginForm">
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="text" name="email" id="email" formControlName="email" required>

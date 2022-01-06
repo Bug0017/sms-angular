@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +10,9 @@ export class LoginComponent implements OnInit {
   loginForm:any;
   constructor(private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
-      email:"",
-      password:""
-    })
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    });
   }
 
   ngOnInit(): void {
