@@ -1,0 +1,22 @@
+<div  class="container">
+  <div class="left">
+    <img src="assets/images/login-cover.svg" alt="login cover">
+  </div>
+
+  <div class="right">
+    <h3>Login</h3>
+    <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm">
+      <fieldset>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" formControlName="email">
+      </fieldset>
+       <fieldset>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" formControlName="password">
+      </fieldset>
+      <fieldset>
+        <button type="submit"> Login </button>
+      </fieldset>
+    </form>
+  </div>
+</div>
