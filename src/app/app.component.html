@@ -1,16 +1,2 @@
-<nb-layout>
-  <nb-layout-header fixed>
-  <!-- Insert header here -->
-    <h3 class="logo__text">School Management Software</h3>
-  </nb-layout-header>
-
-  <nb-layout-column>
     {{title}}
     <router-outlet></router-outlet>
-  </nb-layout-column>
-  <nb-layout-footer fixed>
-    <!-- Insert footer here -->
-  </nb-layout-footer>
-  <nb-sidebar [state]="authenticated ? 'expanded' : 'collapsed'"></nb-sidebar>
-
-</nb-layout>
