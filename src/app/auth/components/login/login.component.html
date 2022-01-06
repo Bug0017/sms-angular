@@ -2,7 +2,7 @@
   <div class="left">
     <img src="assets/images/login-cover.svg" alt="login cover">
   </div>
-  
+
   <div class="right">
     <h3>Login</h3>
     <form (ngSubmit)="onSubmit(loginForm)" [formGroup]="loginForm">
@@ -15,7 +15,7 @@
         <input type="password" name="password" id="password" formControlName="password" required>
       </div>
       <div class="form-group">
-        <button type="submit"> Login </button>
+        <button type="submit" [disabled]="loginForm.status === 'INVALID' ? true : false"> Login </button>
       </div>
     </form>
   </div>
