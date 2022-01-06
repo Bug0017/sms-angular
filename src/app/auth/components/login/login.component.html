@@ -6,17 +6,17 @@
   <div class="right">
     <h3>Login</h3>
     <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm">
-      <fieldset>
+      <div class="form-group">
         <label for="email">Email:</label>
-        <input type="text" name="email" id="email" formControlName="email">
-      </fieldset>
-       <fieldset>
+        <input type="text" name="email" id="email" formControlName="email" required>
+      </div>
+       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password" formControlName="password">
-      </fieldset>
-      <fieldset>
+        <input type="password" name="password" id="password" formControlName="password" required>
+      </div>
+      <div class="form-group">
         <button type="submit"> Login </button>
-      </fieldset>
+      </div>
     </form>
   </div>
 </div>
