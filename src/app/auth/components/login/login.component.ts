@@ -1,6 +1,7 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +9,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm:any;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder , private authService:AuthService , private router: Router) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
@@ -19,6 +20,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(user:any){
-    console.log(user)
+    this.authService.loginUser(user.email, user.password).subscribe(res => {
+      if(res){
+        this.router.navigateByUrl('/dashboard')
+      }
+    })
   }
 }
