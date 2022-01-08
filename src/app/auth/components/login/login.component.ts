@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(user:any){
-    this.authService.loginUser(user.email, user.password).subscribe(res => {
-      if(res){
+    this.authService.loginUser(user.email, user.password).subscribe(data => {
+      if(data){
         this.router.navigateByUrl('/dashboard')
       }
     })
